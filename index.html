@@ -170,7 +170,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2023-07-26 13:12:46 / Modified: 13:19:17" itemprop="dateCreated datePublished" datetime="2023-07-26T13:12:46+08:00">2023-07-26</time>
+              <time title="Created: 2023-07-26 13:12:46 / Modified: 13:27:01" itemprop="dateCreated datePublished" datetime="2023-07-26T13:12:46+08:00">2023-07-26</time>
             </span>
 
           
@@ -196,8 +196,7 @@
 <h3 id="第一部分"><a href="#第一部分" class="headerlink" title="第一部分"></a>第一部分</h3><p>走一步时，小人在 $(2,1)$；走两步时，小人在 $(3,1)$……走 $k(k&lt;n)$ 步时，小人在 $(k+1,1)$。</p>
 <p>所以我们可以得到第一部分的代码：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(k&lt;n) cout&lt;&lt;k+<span class="number">1</span>&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;<span class="number">1</span>&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
-
-<h3 id="第二部分"><a href="#第二部分" class="headerlink" title="第二部分"></a>第二部分</h3><p>第二部分的路径可以分为两种情况：<strong>从左往右走</strong>和<strong>从右往左走</strong>。设 $k_1&#x3D;k-n$，那么 $k_1$ 即为第二部分走的步数。</p>
+<h3 id="第二部分"><a href="#第二部分" class="headerlink" title="第二部分"></a>第二部分</h3><p>第二部分的路径可以分为两种情况：<strong>从左往右走</strong>和<strong>从右往左走</strong>。设 $k_1=k-n$，那么 $k_1$ 即为第二部分走的步数。</p>
 <p>通过分析 $k_1$ 我们可以得到一个规律：</p>
 <ul>
 <li><p>当 $\left \lfloor \dfrac{k_1}{m-1} \right \rfloor $ 为<strong>偶数</strong>时，即为从<strong>左往右</strong>走，此时小人的坐标为 $(n-\dfrac{k_1}{m-1},k_1 \bmod (m-1)+2)$</p>
@@ -205,18 +204,13 @@
 <li><p>当 $\left \lfloor \dfrac{k_1}{m-1} \right \rfloor $ 为<strong>奇数</strong>时，即为从<strong>右往左</strong>走，此时小人的坐标为 $(n-\dfrac{k_1}{m-1},m-k_1 \bmod (m-1))$</p>
 </li>
 </ul>
-<p>于是我们可以得到第二部分的代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">long</span> <span class="type">long</span> k1=k-n;</span><br><span class="line"><span class="keyword">if</span>((k1/(m<span class="number">-1</span>))%<span class="number">2</span>==<span class="number">1</span>) cout&lt;&lt;n-k1/(m<span class="number">-1</span>)&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;m-k1%(m<span class="number">-1</span>)&lt;&lt;endl;</span><br><span class="line"><span class="keyword">else</span> cout&lt;&lt;n-k1/(m<span class="number">-1</span>)&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;k1%(m<span class="number">-1</span>)+<span class="number">2</span>&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
-
+<p>于是我们可以得到第二部分的代码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">long</span> <span class="type">long</span> k1=k-n;</span><br><span class="line"><span class="keyword">if</span>((k1/(m<span class="number">-1</span>))%<span class="number">2</span>==<span class="number">1</span>) cout&lt;&lt;n-k1/(m<span class="number">-1</span>)&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;m-k1%(m<span class="number">-1</span>)&lt;&lt;endl;</span><br><span class="line"><span class="keyword">else</span> cout&lt;&lt;n-k1/(m<span class="number">-1</span>)&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;k1%(m<span class="number">-1</span>)+<span class="number">2</span>&lt;&lt;endl;</span><br></pre></td></tr></table></figure></p>
 <h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">	cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">	<span class="type">long</span> <span class="type">long</span> n,m,k;</span><br><span class="line">	cin&gt;&gt;n&gt;&gt;m&gt;&gt;k;</span><br><span class="line">	<span class="keyword">if</span>(k&lt;n) cout&lt;&lt;k+<span class="number">1</span>&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;<span class="number">1</span>&lt;&lt;endl;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">long</span> <span class="type">long</span> k1=k-n;</span><br><span class="line">		<span class="keyword">if</span>((k1/(m<span class="number">-1</span>))%<span class="number">2</span>==<span class="number">1</span>) cout&lt;&lt;n-k1/(m<span class="number">-1</span>)&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;m-k1%(m<span class="number">-1</span>)&lt;&lt;endl;</span><br><span class="line">		<span class="keyword">else</span> cout&lt;&lt;n-k1/(m<span class="number">-1</span>)&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;k1%(m<span class="number">-1</span>)+<span class="number">2</span>&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>最后提醒：注意数据范围，此题需要<strong>开 long long</strong>！</p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>((k1/(m<span class="number">-1</span>))%<span class="number">2</span>==<span class="number">1</span>) cout&lt;&lt;n-k1/(m<span class="number">-1</span>)&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;m-k1%(m<span class="number">-1</span>)&lt;&lt;endl;</span><br><span class="line"><span class="comment">//               ^ I even wrote this 1 as 0! What am I thinking??????</span></span><br></pre></td></tr></table></figure>
-
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//I spent about two and a half hours on this question.	</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="/%E5%8D%A0%E4%BD%8D" alt="Sumbit_Status"></p>
-<p><img src="/%E5%8D%A0%E4%BD%8D" alt="Debug_Code"></p>
+<p><img src="占位" alt="Sumbit_Status"></p>
+<p><img src="占位" alt="Debug_Code"></p>
 
       
     </div>
@@ -286,7 +280,6 @@
 <p>在上面说过，会有彩蛋。</p>
 <p>点开 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/T335305?contestId=109205">T335305 排排队，做游戏</a>这一题，发现“样例2 解释”里说到：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">前三个小朋友的学号分别是三个出题人的洛谷 UID。</span><br><span class="line">有人说学号是随机生成的，学号可不是随机生成的啊。</span><br></pre></td></tr></table></figure>
-
 <p>把四个学号分别带进去，可以得到四个用户，分别是：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/user/28910">@览遍千秋</a>，<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/user/65363">@一扶苏一</a>，<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/user/274993">@Maxmilite</a>，和一个特别的用户<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/user/653516">@EtILiMxam</a>，这个用户主页写着“<a target="_blank" rel="noopener" href="https://www.wjx.cn/vm/P3AsolR.aspx#">神秘网址</a>”（一个问卷星页面），打开一看，就是彩蛋了。</p>
 <p>不过这个彩蛋已经无效了，这是我成功领取到的截图：</p>
 <p><img src="https://raw.githubusercontent.com/wwwidk1234/wwwidk1234.github.io/main/2023/05/12/luogu-beginning-contest-12-easteregg/img2.png" alt="img2"></p>
@@ -349,16 +342,12 @@
       
           <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
 <h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
       
@@ -530,6 +519,61 @@
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
