@@ -20,28 +20,36 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="洛谷题目传送门 CodeForces 题目传送门 洛谷题解通道 更好的阅读体验？ 前言本文为本蒟蒻第一篇在洛谷题库过审的题解，写得不好请见谅 题目简介这是一道很考验思维的数学题。 题意一个 $n \times m$ 的矩阵，从左上角 $(1,1)$ 出发，从上走到下之后按照蛇形方式走到终点 $(1,2)$。给定一个步数 $k$，求走 $k$ 步之后的坐标。 分析通过数据量 $2\le n,m \l">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CF976B Lara Croft and the New Game 题解">
+<meta property="og:url" content="http://example.com/2023/07/26/CF976B-Lara-Croft-and-the-New-Game-%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="洛谷题目传送门 CodeForces 题目传送门 洛谷题解通道 更好的阅读体验？ 前言本文为本蒟蒻第一篇在洛谷题库过审的题解，写得不好请见谅 题目简介这是一道很考验思维的数学题。 题意一个 $n \times m$ 的矩阵，从左上角 $(1,1)$ 出发，从上走到下之后按照蛇形方式走到终点 $(1,2)$。给定一个步数 $k$，求走 $k$ 步之后的坐标。 分析通过数据量 $2\le n,m \l">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/%E5%8D%A0%E4%BD%8D">
+<meta property="og:image" content="http://example.com/%E5%8D%A0%E4%BD%8D">
+<meta property="article:published_time" content="2023-07-26T05:12:46.000Z">
+<meta property="article:modified_time" content="2023-07-26T05:19:17.176Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="题解">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/%E5%8D%A0%E4%BD%8D">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2023/07/26/CF976B-Lara-Croft-and-the-New-Game-%E9%A2%98%E8%A7%A3/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Hexo</title>
+  <title>CF976B Lara Croft and the New Game 题解 | Hexo</title>
   
 
 
@@ -139,9 +147,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
@@ -157,10 +166,9 @@
       <meta itemprop="name" content="Hexo">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/07/26/CF976B-Lara-Croft-and-the-New-Game-%E9%A2%98%E8%A7%A3/" class="post-title-link" itemprop="url">CF976B Lara Croft and the New Game 题解</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          CF976B Lara Croft and the New Game 题解
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -184,7 +192,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF976B">洛谷题目传送门</a></p>
+        <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF976B">洛谷题目传送门</a></p>
 <p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/976/B">CodeForces 题目传送门</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/nameismissing/solution-cf976b">洛谷题解通道</a></p>
 <p><a target="_blank" rel="noopener" href="https://wwwidk1234.github.io/">更好的阅读体验？</a></p>
@@ -218,164 +226,33 @@
 <p><img src="/%E5%8D%A0%E4%BD%8D" alt="Sumbit_Status"></p>
 <p><img src="/%E5%8D%A0%E4%BD%8D" alt="Debug_Code"></p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag"># 题解</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/12/luogu-beginning-contest-12-easteregg/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/05/12/luogu-beginning-contest-12-easteregg/" class="post-title-link" itemprop="url">洛谷入门赛#12彩蛋</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-05-12 21:32:16" itemprop="dateCreated datePublished" datetime="2023-05-12T21:32:16+08:00">2023-05-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-05-13 11:43:45" itemprop="dateModified" datetime="2023-05-13T11:43:45+08:00">2023-05-13</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="比赛链接"><a href="#比赛链接" class="headerlink" title="比赛链接"></a>比赛链接</h1><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/contest/109205">【LGR-138-Div.4】洛谷入门赛 #12</a></p>
-<h1 id="彩蛋"><a href="#彩蛋" class="headerlink" title="彩蛋"></a>彩蛋</h1><p><img src="https://raw.githubusercontent.com/wwwidk1234/wwwidk1234.github.io/main/2023/05/12/luogu-beginning-contest-12-easteregg/img1.png" alt="img1.png"></p>
-<p>在上面说过，会有彩蛋。</p>
-<p>点开 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/T335305?contestId=109205">T335305 排排队，做游戏</a>这一题，发现“样例2 解释”里说到：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">前三个小朋友的学号分别是三个出题人的洛谷 UID。</span><br><span class="line">有人说学号是随机生成的，学号可不是随机生成的啊。</span><br></pre></td></tr></table></figure>
-
-<p>把四个学号分别带进去，可以得到四个用户，分别是：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/user/28910">@览遍千秋</a>，<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/user/65363">@一扶苏一</a>，<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/user/274993">@Maxmilite</a>，和一个特别的用户<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/user/653516">@EtILiMxam</a>，这个用户主页写着“<a target="_blank" rel="noopener" href="https://www.wjx.cn/vm/P3AsolR.aspx#">神秘网址</a>”（一个问卷星页面），打开一看，就是彩蛋了。</p>
-<p>不过这个彩蛋已经无效了，这是我成功领取到的截图：</p>
-<p><img src="https://raw.githubusercontent.com/wwwidk1234/wwwidk1234.github.io/main/2023/05/12/luogu-beginning-contest-12-easteregg/img2.png" alt="img2"></p>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/05/12/luogu-beginning-contest-12-easteregg/" rel="prev" title="洛谷入门赛#12彩蛋">
+      <i class="fa fa-chevron-left"></i> 洛谷入门赛#12彩蛋
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/29/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/04/29/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-04-29 15:58:34" itemprop="dateCreated datePublished" datetime="2023-04-29T15:58:34+08:00">2023-04-29</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
@@ -428,6 +305,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E7%AE%80%E4%BB%8B"><span class="nav-number">2.</span> <span class="nav-text">题目简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E6%84%8F"><span class="nav-number">3.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%9E%90"><span class="nav-number">4.</span> <span class="nav-text">分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86"><span class="nav-number">4.1.</span> <span class="nav-text">第一部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86"><span class="nav-number">4.2.</span> <span class="nav-text">第二部分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81"><span class="nav-number">5.</span> <span class="nav-text">完整代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-number">6.</span> <span class="nav-text">后记</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
